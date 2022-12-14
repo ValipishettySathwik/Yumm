@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <script>
+        let obj={
+            name:"cvrce",
+            age:20,
+            display(){
+                return this.age
+            }
+        }
+        let obj1=new Object({
+            name:"cv",
+            age:20,
+            display(){
+               return this.age
+            }
+
+        });
+        document.write(obj1.name);
+        document.write("<br>")
+        function one(){
+            this.a=10;
+        }
+        let o1=new one();
+        o1.b=20;
+        document.write(o1.b);
+        console.log(o1.b);
+        one.prototype.b=20;
+        let o2=new one();
+        document.write(o2.b);
+        o1.c=30;
+        document.write(o1.c);
+        // function two(){
+        //     one.call(this);
+        //     this.c=100;
+        // }
+        // let o3=new two();
+        // console.log(o3.a);
+        // document.write(o3.a);
+        // document.write(o3.c);
+        function Two(){
+
+            this.c=100;
+        }
+        Two.prototype=Object.create(one.prototype);
+        let o3 =new Two();
+        document.write(o3.c);
+        document.write(o3.b);
+    </script>
+</body>
+</html>
